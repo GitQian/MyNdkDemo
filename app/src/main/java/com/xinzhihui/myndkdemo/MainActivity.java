@@ -1,0 +1,20 @@
+package com.xinzhihui.myndkdemo;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView mNdkTv;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mNdkTv = (TextView) findViewById(R.id.tv_ndk);
+
+        mNdkTv.setText(new MyNdk().getString());
+        new MyNdk().socket("https://www.baidu.com/", "aaa0");
+    }
+}
